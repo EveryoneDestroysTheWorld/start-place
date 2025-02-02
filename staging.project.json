@@ -1,5 +1,5 @@
 {
-  "name": "Everyone Destroys the World (Dev)",
+  "name": "Everyone Destroys the World (Staging)",
   "globIgnorePaths": ["**/*.production.lua", "**/*.staging.lua", "**/*.development.lua"],
   "tree": {
     "$className": "DataModel",
@@ -25,7 +25,7 @@
         "$path": "ServerPackages"
       },
       "PlaceMap": {
-        "$path": "src/ServerStorage/PlaceMap.development.lua"
+        "$path": "src/ServerStorage/PlaceMap.staging.lua"
       }
     },
     "StarterPlayer": {

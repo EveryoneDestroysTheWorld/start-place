@@ -8,3 +8,6 @@ private = true
 [dependencies]
 react = "jsdotlua/react@17.2.1"
 react-roblox = "jsdotlua/react-roblox@17.1.0"
+
+[server-dependencies]
+Stage = "everyonedestroystheworld/stage@0.1.0"

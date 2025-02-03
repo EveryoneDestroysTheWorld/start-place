@@ -29,7 +29,10 @@
       }
     },
     "StarterGui": {
-      "$path": "src/StarterGui"
+      "$path": "src/StarterGui",
+      "$properties": {
+        "ScreenOrientation": "LandscapeRight"
+      }
     },
     "StarterPlayer": {
       "StarterPlayerScripts": {

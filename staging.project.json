@@ -28,6 +28,9 @@
         "$path": "src/ServerStorage/PlaceMap.staging.lua"
       }
     },
+    "StarterGui": {
+      "$path": "src/StarterGui"
+    },
     "StarterPlayer": {
       "StarterPlayerScripts": {
         "$path": "src/StarterPlayer/StarterPlayerScripts"

@@ -20,6 +20,7 @@ ReplicatedStorage.Shared.Functions.TeleportToMatch.OnServerInvoke = function(pla
   assert(not RunService:IsStudio(), "Studio players currently cannot teleport to servers. Try using the Roblox Player instead.")
 
   print("[Matchmaking] Reserving server...");
+  ReplicatedStorage.Shared.Events.InitializationStatusChanged:FireClient(player, "Reserving server...");
   local placeID = placeMap.turfWar;
   local serverAccessCode, privateServerID = TeleportService:ReserveServer(placeID);
   print(`[Matchmaking] Server reserved: {privateServerID}`);
@@ -34,7 +35,10 @@ ReplicatedStorage.Shared.Functions.TeleportToMatch.OnServerInvoke = function(pla
   };
   MemoryStoreService:GetHashMap("PrivateServerRoundMetadata"):SetAsync(privateServerID, HttpService:JSONEncode(serverSettings), 2592000);
 
-  print(`[Matchmaking] Teleporting {player.Name} to the match...`)
+  print(`[Matchmaking] Teleporting {player.Name} to the match...`);
+  ReplicatedStorage.Shared.Events.InitializationStatusChanged:FireClient(player, "Teleporting...");
+  ReplicatedStorage.Shared.Functions.ShowTeleportGUI:InvokeClient(player);
+
   local teleportOptions = Instance.new("TeleportOptions");
   teleportOptions.ReservedServerAccessCode = serverAccessCode;
   TeleportService:TeleportAsync(placeID, {player}, teleportOptions);
